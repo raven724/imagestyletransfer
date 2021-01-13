@@ -7,10 +7,10 @@
     tools:context=".MainPage">
 
     <Button
-        android:id="@+id/btn_sub1"
+        android:id="@+id/btn_main_sub1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="subpage1"
+        android:text="@string/string_subpage1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,10 +18,10 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <Button
-        android:id="@+id/btn_sub2"
+        android:id="@+id/btn_main_sub2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="subpage2"
+        android:text="@string/string_subpage2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
