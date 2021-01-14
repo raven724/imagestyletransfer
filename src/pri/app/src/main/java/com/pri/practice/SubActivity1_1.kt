@@ -19,7 +19,7 @@ class SubActivity1_1 : AppCompatActivity() {
         }
 
         btnSubpage2.setOnClickListener {
-            val intentSubpage2 = Intent(this, SubActivity1_1::class.java)
+            val intentSubpage2 = Intent(this, SubActivity1_3::class.java)
             startActivity(intentSubpage2)
         }
     }

@@ -24,3 +24,5 @@ class SubActivity1 : AppCompatActivity() {
         }
     }
 }
+
+// startActivityResult()를 통해서 더 편리한 방식으로 개선할 수 있을 것으로 보임.
