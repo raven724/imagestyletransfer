@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+    <string name="string_sub1">Transfer Photo</string>
+    <string name="string_sub2">Take Photo</string>
+    <string name="string_select_photo">Select Photo</string>
+    <string name="string_select_style">Select Style</string>
+    <string name="string_fix_transfer">Transfer</string>
+    <string name="string_fix_select">Select</string>
+    <string name="string_fix_save">Save</string>
+    <string name="string_fix_Main">Go to Main Page</string>
+    <string name="string_name_model1">Model 1</string>
+    <string name="string_name_model2">Model 2</string>
+    <string name="string_name_model3">Model 3</string>
+    <string name="string_processing">Processing, please wait for a minute.</string>
+
+    <string name="string_image_description">Image that applied as input</string>
+</resources>
