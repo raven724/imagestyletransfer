@@ -6,44 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PopUp_model">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-        </LinearLayout>
-    </ScrollView>
-
     <Button
         android:id="@+id/btn_modelSelect"
         android:layout_width="wrap_content"
@@ -61,5 +23,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="100dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioModel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_name_model1" />
+
+        <RadioButton
+            android:id="@+id/radioModel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_name_model2" />
+
+        <RadioButton
+            android:id="@+id/radioModel3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_name_model3" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
