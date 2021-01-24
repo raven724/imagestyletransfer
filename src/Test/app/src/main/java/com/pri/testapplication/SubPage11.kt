@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import androidx.core.net.toUri
 
 class SubPage11 : AppCompatActivity() {
     var modelName = "undefined"
@@ -14,8 +16,18 @@ class SubPage11 : AppCompatActivity() {
         setContentView(R.layout.activity_sub_page11)
 
         // val viewInputImage: ImageView = findViewById(R.id.imageInput)
-        val btnSelectStyle: Button = findViewById(R.id.btn_modelSelect)
+        val btnSelectStyle: Button = findViewById(R.id.btn_callModel)
         val btnSub11Sub12: Button = findViewById(R.id.btn_Sub1112)
+        val imageInput: ImageView = findViewById(R.id.imageInput)
+
+        val debugHasExtra: Boolean = intent.hasExtra("photoUri")
+        Log.d("Sub11", "hasExtra: ${debugHasExtra.toString()}")
+
+        if(intent.hasExtra("photoUri")){
+            val stringUri = intent.getStringExtra("photoUri")
+            val photoUri = stringUri!!.toUri()
+            imageInput.setImageURI(photoUri)
+        }
 
         btnSelectStyle.setOnClickListener {
             val intentSubPopup = Intent(this, PopUp_model::class.java)

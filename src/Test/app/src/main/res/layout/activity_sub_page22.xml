@@ -25,7 +25,7 @@
         app:layout_constraintGuide_begin="484dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_Sub22Sub11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/string_fix_transfer"
