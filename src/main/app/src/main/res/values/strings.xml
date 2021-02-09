@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MainProject</string>
+    <string name="string_select_btn1">Transfer Image</string>
+    <string name="string_select_btn2">Take Photo</string>
+    <string name="string_go_main">Main Page</string>
+    <string name="string_model">Select Model</string>
+    <string name="string_transfer">Transfer</string>
+    <string name="string_model1">Model1 (Active)</string>
+    <string name="string_model2">Model2 (Inactive)</string>
+    <string name="string_default_model">Default Model (Active)</string>
+</resources>

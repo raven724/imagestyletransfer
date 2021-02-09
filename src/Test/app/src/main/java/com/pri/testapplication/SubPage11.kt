@@ -29,6 +29,10 @@ class SubPage11 : AppCompatActivity() {
             imageInput.setImageURI(photoUri)
         }
 
+        imageInput.setOnClickListener {
+            val intentGallery = Intent()
+        }
+
         btnSelectStyle.setOnClickListener {
             val intentSubPopup = Intent(this, PopUp_model::class.java)
             startActivityForResult(intentSubPopup, 50)
