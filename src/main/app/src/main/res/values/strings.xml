@@ -7,5 +7,9 @@
     <string name="string_transfer">Transfer</string>
     <string name="string_model1">Model1 (Active)</string>
     <string name="string_model2">Model2 (Inactive)</string>
+    <string name="string_model3">Model3 (Inactive)</string>
     <string name="string_default_model">Default Model (Active)</string>
+    <string name="string_select_model">Select model you want.</string>
+    <string name="string_close_model">Select Model</string>
+    <string name="description_imageOutput">Show Image Output</string>
 </resources>
