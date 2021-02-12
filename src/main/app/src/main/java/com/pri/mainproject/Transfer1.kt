@@ -25,7 +25,6 @@ class Transfer1 : AppCompatActivity() {
     private val flagRequestStorage = 50
     private val flagRequestModel = 51
 
-    private val imageView: ImageView = findViewById(R.id.imageInput)
     private var inputBitmap: Bitmap? = null
     private var modelData: Bitmap? = null
 
@@ -36,6 +35,7 @@ class Transfer1 : AppCompatActivity() {
         val btnSelectModel: Button = findViewById(R.id.btn_model)
         val btnMainPage: Button = findViewById(R.id.btn_mainpage)
         val btnTransferPage: Button = findViewById(R.id.btn_transfer)
+        val imageView: ImageView = findViewById(R.id.imageInput)
 
         imageView.setOnClickListener {
             val storageIntent = Intent(Intent.ACTION_PICK)
@@ -57,10 +57,12 @@ class Transfer1 : AppCompatActivity() {
             if(inputBitmap != null && modelData != null) {
                 predictor.getInputFile(modelData!!)
                 val predictResult: TensorBuffer? = predictor.runPredictModel()
+                Toast.makeText(this, "Finish predict model!", Toast.LENGTH_LONG).show()
                 if (predictResult != null){
                     val transferModel = Transfer(this)
                     transferModel.getInputFile(inputBitmap!!)
                     val transferResult = transferModel.runTransferModel(predictResult)
+                    Toast.makeText(this, "Finish transfer model!", Toast.LENGTH_LONG).show()
                     // imageView.setImageBitmap(transferResult)
                     File.createTempFile("output", ".jpg", this.cacheDir)
                     val cacheFile = File(this.cacheDir, "output.jpg")
@@ -82,6 +84,7 @@ class Transfer1 : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        val imageView: ImageView = findViewById(R.id.imageInput)
         if(resultCode == Activity.RESULT_OK){
             when(requestCode){
                 flagRequestStorage -> {
