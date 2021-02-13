@@ -11,6 +11,10 @@
     <string name="string_default_model">Default Model (Active)</string>
     <string name="string_select_model">Select model you want.</string>
     <string name="string_close_model">Select Model</string>
-    <string name="description_imageOutput">Show Image Output</string>
     <string name="string_save_image">Save Image</string>
+    <string name="string_save_photo">Save Photo</string>
+    <string name="string_transfer_photo">Transfer Photo</string>
+    <string name="description_imageInput">Show Image Input</string>
+    <string name="description_imageOutput">Show Image Output</string>
+    <string name="description_imagePhoto">Show Photo Result</string>
 </resources>

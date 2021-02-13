@@ -15,6 +15,7 @@ import android.provider.ContactsContract
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
@@ -49,32 +50,27 @@ class Transfer1 : AppCompatActivity() {
         }
 
         btnMainPage.setOnClickListener {
-            finish()
+            val intentSelectPage = Intent(this, SelectPage::class.java)
+            startActivity(intentSelectPage)
         }
 
         btnTransferPage.setOnClickListener {
             val predictor = Predict(this)
             if(inputBitmap != null && modelData != null) {
-                predictor.getInputFile(modelData!!)
-                val predictResult: TensorBuffer? = predictor.runPredictModel()
-                Toast.makeText(this, "Finish predict model!", Toast.LENGTH_LONG).show()
-                if (predictResult != null){
-                    val transferModel = Transfer(this)
-                    transferModel.getInputFile(inputBitmap!!)
-                    val transferResult = transferModel.runTransferModel(predictResult)
-                    Toast.makeText(this, "Finish transfer model!", Toast.LENGTH_LONG).show()
-                    // imageView.setImageBitmap(transferResult)
-                    File.createTempFile("output", ".jpg", this.cacheDir)
-                    val cacheFile = File(this.cacheDir, "output.jpg")
-                    val outputStream = cacheFile.outputStream()
-                    transferResult!!.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-                    outputStream.close()
-                    val nextIntent = Intent(this, Transfer2::class.java)
-                    startActivity(nextIntent)
-                }
-                else{
-                    Toast.makeText(this, "JGVHJBGVJHB!", Toast.LENGTH_LONG).show()
-                }
+                val predictResult: TensorBuffer = predictor.runPredictModel(modelData!!)
+                val transferModel = Transfer(this)
+                val transferResult = transferModel.runTransferModel(predictResult, inputBitmap!!)
+                Toast.makeText(this, "Finish transfer model!", Toast.LENGTH_LONG).show()
+                // imageView.setImageBitmap(transferResult)
+
+                File.createTempFile("output", ".jpg", this.cacheDir)
+                val cacheFile = File(this.cacheDir, "output.jpg")
+                val outputStream = cacheFile.outputStream()
+                transferResult!!.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+                outputStream.close()
+                val nextIntent = Intent(this, Transfer2::class.java)
+                startActivity(nextIntent)
+
             }
             else{
                 Toast.makeText(this, "NoNoNoNoNoNoNoNoNo", Toast.LENGTH_SHORT).show()

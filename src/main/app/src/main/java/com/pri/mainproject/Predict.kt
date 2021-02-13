@@ -17,30 +17,14 @@ class Predict(private val context: Context) {
     private var inputFile: Bitmap? = null
     private var predictModel = MagentaArbitraryImageStylizationV1256Int8Prediction1.newInstance(context)
 
-    fun getInputFile(uri: Uri){
-        this.inputFile = when {
-            Build.VERSION.SDK_INT > 27 -> {
-                val source = ImageDecoder.createSource(context.contentResolver, uri)
-                ImageDecoder.decodeBitmap(source)
-            }
-            else -> MediaStore.Images.Media.getBitmap(context.contentResolver, uri)
-        }
+    fun runPredictModel(bitmap: Bitmap): TensorBuffer{
+        val styleImage = TensorImage.fromBitmap(bitmap)
+        val outputPredict = predictModel.process(styleImage)
+
+        return outputPredict.styleBottleneckAsTensorBuffer
     }
 
-    fun getInputFile(bitmap: Bitmap){
-        this.inputFile = bitmap
-    }
-
-    fun runPredictModel(): TensorBuffer?{
-        return if(inputFile != null){
-            val styleImage = TensorImage.fromBitmap(inputFile)
-            val outputPredict = predictModel.process(styleImage)
-
-            outputPredict.styleBottleneckAsTensorBuffer
-        }
-        else{
-            Toast.makeText(context, "NoNoNoNo!!!!", Toast.LENGTH_LONG).show()
-            null
-        }
+    fun finish(){
+        predictModel.close()
     }
 }

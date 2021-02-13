@@ -11,6 +11,7 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.MediaController
+import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
 import java.io.File
 import java.io.FileOutputStream
@@ -32,7 +33,7 @@ class Transfer2 : AppCompatActivity() {
         val btnImageSave: Button = findViewById(R.id.btn_saveImage)
 
         btnGotoMainPage.setOnClickListener {
-            val mainIntent = Intent(this, SelectModel::class.java)
+            val mainIntent = Intent(this, SelectPage::class.java)
             startActivity(mainIntent)
         }
 
@@ -56,11 +57,18 @@ class Transfer2 : AppCompatActivity() {
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
                 fos.close()
             }
+            else{
+                Toast.makeText(this, "히히 못가: descriptor", Toast.LENGTH_SHORT).show()
+            }
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
                 values.clear()
                 values.put(MediaStore.Images.Media.IS_PENDING, 0)
                 contentResolver.update(uri, values, null, null)
             }
+            Toast.makeText(this, "히히 됐다", Toast.LENGTH_SHORT).show()
+        }
+        if(uri == null){
+            Toast.makeText(this, "히히 못가: uri", Toast.LENGTH_SHORT).show()
         }
     }
 
