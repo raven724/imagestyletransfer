@@ -1,8 +1,10 @@
 package com.pri.mainproject
 
 import android.app.Activity
+import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Process
@@ -18,6 +20,8 @@ class SelectPage : AppCompatActivity() {
 
     private val FLAG_REQUEST_CAMERA = 90
 
+    private var outputUri: Uri? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_page)
@@ -30,8 +34,7 @@ class SelectPage : AppCompatActivity() {
             startActivity(transferIntent)
         }
         btnPhoto.setOnClickListener {
-            val photoIntent = Intent(this, Photo1::class.java)
-            startActivity(photoIntent)
+            openCamera()
         }
     }
 
@@ -40,11 +43,9 @@ class SelectPage : AppCompatActivity() {
         if(resultCode == Activity.RESULT_OK){
             when(requestCode){
                 FLAG_REQUEST_CAMERA -> {
-                    if(data?.extras?.get("data") != null){
+                    if(outputUri != null){
                         val intentPhotoPreview = Intent(this, Photo1::class.java)
-                        val bitmap = data.extras?.get("data") as Bitmap
-                        val fileName = cacheImageFile(bitmap)
-                        intentPhotoPreview.putExtra("fileName", fileName)
+                        intentPhotoPreview.putExtra("photoUri", outputUri.toString())
                         startActivity(intentPhotoPreview)
                     }
                 }
@@ -67,8 +68,11 @@ class SelectPage : AppCompatActivity() {
     }
 
     private fun openCamera(){
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(intent, FLAG_REQUEST_CAMERA)
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        val photoUri = createPhotoUri(newFileName())
+        outputUri = photoUri
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri)
+        startActivityForResult(cameraIntent, FLAG_REQUEST_CAMERA)
     }
 
     private fun cacheImageFile(bitmap: Bitmap): String{
@@ -84,5 +88,13 @@ class SelectPage : AppCompatActivity() {
     private fun newFileName(): String{
         val sdf = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.KOREA)
         return sdf.format(System.currentTimeMillis())
+    }
+
+    private fun createPhotoUri(filename: String): Uri?{
+        val values = ContentValues()
+        values.put(MediaStore.Images.Media.DISPLAY_NAME, filename)
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpg")
+
+        return contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
     }
 }

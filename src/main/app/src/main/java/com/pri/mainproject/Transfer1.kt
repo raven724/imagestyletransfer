@@ -18,6 +18,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.net.toUri
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.File
 import java.io.FileOutputStream
@@ -37,6 +38,12 @@ class Transfer1 : AppCompatActivity() {
         val btnMainPage: Button = findViewById(R.id.btn_mainpage)
         val btnTransferPage: Button = findViewById(R.id.btn_transfer)
         val imageView: ImageView = findViewById(R.id.imageInput)
+
+        if(intent.hasExtra("photoUri") && intent.getStringExtra("photoUri") != null){
+            val stringUri = intent.getStringExtra("photoUri")
+            val photoUri = stringUri?.toUri()
+            imageView.setImageURI(photoUri)
+        }
 
         imageView.setOnClickListener {
             val storageIntent = Intent(Intent.ACTION_PICK)

@@ -1,6 +1,7 @@
 package com.pri.mainproject
 
 import android.content.ContentValues
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Build
@@ -11,6 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.net.toUri
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -22,18 +24,15 @@ class Photo1 : AppCompatActivity() {
         setContentView(R.layout.activity_photo1)
 
         val imagePhoto: ImageView = findViewById(R.id.imagePhoto)
-        val btnSavePhoto: Button = findViewById(R.id.btn_savePhoto)
         val btnTransferPhoto: Button = findViewById(R.id.btn_transferPhoto)
 
-        val cachePhotoFileName = intent.getStringExtra("fileName")
-        val cacheFile = File(this.cacheDir, cachePhotoFileName!!)
-        val fileInputStream = cacheFile.inputStream()
-        val drawablePhoto = Drawable.createFromStream(fileInputStream, null)
-        imagePhoto.setImageBitmap(drawablePhoto.toBitmap())
+        val photoUri = intent.getStringExtra("photoUri")?.toUri()
+        imagePhoto.setImageURI(photoUri)
 
-
-        btnSavePhoto.setOnClickListener {
-            saveImage(drawablePhoto.toBitmap())
+        btnTransferPhoto.setOnClickListener {
+            val transferIntent = Intent(this, Transfer1::class.java)
+            transferIntent.putExtra("photoUri", photoUri.toString())
+            startActivity(transferIntent)
         }
     }
 
