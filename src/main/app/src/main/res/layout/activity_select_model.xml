@@ -32,6 +32,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/string_model3" />
+
+        <Button
+            android:id="@+id/btn_defaultModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_default_model" />
     </LinearLayout>
 
     <TextView

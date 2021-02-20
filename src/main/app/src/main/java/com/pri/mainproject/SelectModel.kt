@@ -25,6 +25,10 @@ class SelectModel : AppCompatActivity() {
             returnString = "style23.jpg"
             textView.text = getString(R.string.string_model1)
         }
+        btnModelPhoto1.setOnClickListener {
+            returnString = "default"
+            textView.text = getString(R.string.string_default_model)
+        }
         btnClosePage.setOnClickListener {
             val returnIntent = Intent()
             if(returnString == "None"){

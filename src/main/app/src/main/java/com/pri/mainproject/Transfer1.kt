@@ -98,7 +98,11 @@ class Transfer1 : AppCompatActivity() {
                 flagRequestModel -> {
                     val returnString = data?.getStringExtra("returnValue")
                     modelData = if(returnString == "default"){
-                        // need to implement.
+                        /*
+                        need to implement.
+                        access to the gallery, get the model file, return the data as bitmap
+                        need to test if is possible, and no errors occurred.
+                         */
                         null
                     }
                     else{
