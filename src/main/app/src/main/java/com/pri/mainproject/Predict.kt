@@ -18,7 +18,8 @@ class Predict(private val context: Context) {
     private var predictModel = MagentaArbitraryImageStylizationV1256Int8Prediction1.newInstance(context)
 
     fun runPredictModel(bitmap: Bitmap): TensorBuffer{
-        val styleImage = TensorImage.fromBitmap(bitmap)
+        val preProcessInput = bitmap.copy(Bitmap.Config.ARGB_8888, true)
+        val styleImage = TensorImage.fromBitmap(preProcessInput)
         val outputPredict = predictModel.process(styleImage)
 
         return outputPredict.styleBottleneckAsTensorBuffer
