@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="553dp" />
+        app:layout_constraintGuide_begin="530dp" />
 
     <Button
         android:id="@+id/btn_mainpage"
@@ -69,6 +69,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="651dp" />
+        app:layout_constraintGuide_begin="629dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

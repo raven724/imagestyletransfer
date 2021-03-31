@@ -15,6 +15,7 @@ import org.checkerframework.common.value.qual.IntRangeFromNonNegative
 class SelectModel : AppCompatActivity() {
     private var returnString: String = "None"
     private var returnUri: String = "None"
+    private var sendString: String = "None"
     private val flagStorage = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,7 @@ class SelectModel : AppCompatActivity() {
         val btnModelPhoto1: Button = findViewById(R.id.btn_model1)
         val btnDefaultPhoto: Button = findViewById(R.id.btn_defaultModel)
         val btnClosePage: Button = findViewById(R.id.btn_selectModel)
+        val btnViewModel1: Button = findViewById(R.id.btn_lookupModel1)
 
         btnModelPhoto1.setOnClickListener {
             returnString = "style23.jpg"
@@ -33,6 +35,12 @@ class SelectModel : AppCompatActivity() {
         btnDefaultPhoto.setOnClickListener {
             returnString = "default"
             textView.text = getString(R.string.string_default_model)
+        }
+        btnViewModel1.setOnClickListener {
+            sendString = "style23.jpg"
+            val sendIntent: Intent = Intent(this, ModelImage::class.java)
+            sendIntent.putExtra("photo", sendString)
+            startActivity(sendIntent)
         }
         btnClosePage.setOnClickListener {
             when(returnString){

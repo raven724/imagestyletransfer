@@ -113,10 +113,5 @@
             android:layout_height="wrap_content"
             android:text="▶" />
 
-        <Button
-            android:id="@+id/btn_lookupModelDefault"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="▶" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
