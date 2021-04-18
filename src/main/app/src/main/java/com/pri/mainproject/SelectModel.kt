@@ -16,6 +16,7 @@ class SelectModel : AppCompatActivity() {
     private var returnString: String = "None"
     private var returnUri: String = "None"
     private var sendString: String = "None"
+    private var modelString: String = "None"
     private val flagStorage = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +25,25 @@ class SelectModel : AppCompatActivity() {
 
         val textView: TextView = findViewById(R.id.modelText)
         val btnModelPhoto1: Button = findViewById(R.id.btn_model1)
+        val btnModelPhoto2: Button = findViewById(R.id.btn_model2)
+        val btnModelPhoto3: Button = findViewById(R.id.btn_model3)
         val btnDefaultPhoto: Button = findViewById(R.id.btn_defaultModel)
         val btnClosePage: Button = findViewById(R.id.btn_selectModel)
         val btnViewModel1: Button = findViewById(R.id.btn_lookupModel1)
+        val btnViewModel2: Button = findViewById(R.id.btn_lookupModel2)
+        val btnViewModel3: Button = findViewById(R.id.btn_lookupModel3)
 
         btnModelPhoto1.setOnClickListener {
             returnString = "style23.jpg"
             textView.text = getString(R.string.string_model1)
+        }
+        btnModelPhoto2.setOnClickListener {
+            returnString = "Starry_Night.jpg"
+            textView.text = getString(R.string.string_model2)
+        }
+        btnModelPhoto3.setOnClickListener {
+            returnString = "Mona_Lisa.jpg"
+            textView.text = getString(R.string.string_model3)
         }
         btnDefaultPhoto.setOnClickListener {
             returnString = "default"
@@ -38,8 +51,26 @@ class SelectModel : AppCompatActivity() {
         }
         btnViewModel1.setOnClickListener {
             sendString = "style23.jpg"
-            val sendIntent: Intent = Intent(this, ModelImage::class.java)
+            modelString = "Udnie, Francis Picabia"
+            val sendIntent = Intent(this, ModelImage::class.java)
             sendIntent.putExtra("photo", sendString)
+            sendIntent.putExtra("model", modelString)
+            startActivity(sendIntent)
+        }
+        btnViewModel2.setOnClickListener {
+            sendString = "Starry_Night.jpg"
+            modelString = "Starry Night, Vincent Van Gogh"
+            val sendIntent = Intent(this, ModelImage::class.java)
+            sendIntent.putExtra("photo", sendString)
+            sendIntent.putExtra("model", modelString)
+            startActivity(sendIntent)
+        }
+        btnViewModel3.setOnClickListener {
+            sendString = "Mona_Lisa.jpg"
+            modelString = "Mona_Lisa, Leonardo da Vinci"
+            val sendIntent = Intent(this, ModelImage::class.java)
+            sendIntent.putExtra("photo", sendString)
+            sendIntent.putExtra("model", modelString)
             startActivity(sendIntent)
         }
         btnClosePage.setOnClickListener {

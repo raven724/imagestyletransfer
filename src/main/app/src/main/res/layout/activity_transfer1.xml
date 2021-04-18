@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_gray"
     tools:context=".Transfer1">
 
     <ImageView
         android:id="@+id/imageInput"
-        android:layout_width="301dp"
-        android:layout_height="268dp"
+        android:layout_width="274dp"
+        android:layout_height="270dp"
         android:contentDescription="@string/description_imageInput"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+        app:srcCompat="@drawable/select_image" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

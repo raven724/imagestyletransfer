@@ -10,6 +10,8 @@ import android.os.Bundle
 import android.os.Process
 import android.provider.MediaStore
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import java.io.File
 import java.text.SimpleDateFormat
@@ -28,6 +30,7 @@ class SelectPage : AppCompatActivity() {
 
         val btnTransfer: Button = findViewById(R.id.btn_transferAction)
         val btnPhoto: Button = findViewById(R.id.btn_PhotoAction)
+        val btnNotice: ImageView = findViewById(R.id.Iv_osNotice)
 
         btnTransfer.setOnClickListener {
             val transferIntent = Intent(this, Transfer1::class.java)
@@ -35,6 +38,10 @@ class SelectPage : AppCompatActivity() {
         }
         btnPhoto.setOnClickListener {
             openCamera()
+        }
+        btnNotice.setOnClickListener {
+            val notificationIntent = Intent(this, Notification::class.java)
+            startActivity(notificationIntent)
         }
     }
 

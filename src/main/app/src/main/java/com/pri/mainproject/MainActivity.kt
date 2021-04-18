@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -85,7 +86,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goMainPage(){
-        val nextPage = Intent(this, SelectPage::class.java)
-        startActivity(nextPage)
+        Handler().postDelayed({
+            val nextPage = Intent(this, SelectPage::class.java)
+            startActivity(nextPage)
+        }, 1000L)
     }
 }

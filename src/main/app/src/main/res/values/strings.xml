@@ -1,20 +1,46 @@
 <resources>
-    <string name="app_name">MainProject</string>
-    <string name="string_select_btn1">Transfer Image</string>
+    <string name="app_name">Phonetist</string>
+
+    <string name="string_select_btn1">Transfer</string>
     <string name="string_select_btn2">Take Photo</string>
     <string name="string_go_main">Main Page</string>
     <string name="string_model">Select Model</string>
     <string name="string_transfer">Transfer</string>
-    <string name="string_model1">Model1 (Active)</string>
-    <string name="string_model2">Model2 (Inactive)</string>
-    <string name="string_model3">Model3 (Inactive)</string>
-    <string name="string_default_model">Default Model (Inactive)</string>
+    <string name="string_model1">Udnie</string>
+    <string name="string_model2">Starry Night</string>
+    <string name="string_model3">Mona Lisa</string>
+    <string name="string_default_model">Default Model</string>
     <string name="string_select_model">Select model you want.</string>
     <string name="string_close_model">Select Model</string>
     <string name="string_save_image">Save Image</string>
     <string name="string_save_photo">Save Photo</string>
+    <string name="string_model_name">Model Name</string>
+    <string name="string_back">Back</string>
     <string name="string_transfer_photo">Transfer Photo</string>
+    <string name="string_icon_arrow">▶</string>
+    <string name="string_text_selectedModel">Selected Model</string>
+
     <string name="description_imageInput">Show Image Input</string>
     <string name="description_imageOutput">Show Image Output</string>
     <string name="description_imagePhoto">Show Photo Result</string>
+    <string name="description_logo">Logo</string>
+    <string name="description_arrow">direction</string>
+    <string name="description_os_notification">open-source notification</string>
+
+    <string name="string_notification_magenta">Magenta</string>
+    <string name="string_link_magenta">https://magenta.tensorflow.org/</string>
+    <string name="string_link_magenta_licence">https://github.com/magenta/magenta/blob/master/LICENSE</string>
+    <string name="string_notification_magenta_licence">Used under the Apache Licence 2.0</string>
+
+    <string name="string_explain_transfer1">Click to</string>
+    <string name="string_explain_transfer2">Transfer style!</string>
+    <string name="string_explain_photo1">Click to</string>
+    <string name="string_explain_photo2">Take photo first!</string>
+    <string name="string_explain_welcome">Welcome to Phonetist!</string>
+    <string name="string_explain_welcome2">Select the function you want to use!</string>
+    <string name="string_explain_selectModel1">Select Model</string>
+    <string name="string_explain_selectModel2">you want to transfer!</string>
+    <string name="string_explain_viewModel1">View</string>
+    <string name="string_explain_viewModel2">what Model is prepared!</string>
+    <string name="string_explain_os_usage">Use tflite model of magenta</string>
 </resources>
