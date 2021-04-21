@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageInput"
-        android:layout_width="274dp"
-        android:layout_height="270dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:contentDescription="@string/description_imageInput"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"

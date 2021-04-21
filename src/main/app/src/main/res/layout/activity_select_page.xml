@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:text="@string/string_select_btn1"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintEnd_toStartOf="@+id/btn_colorFilter"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline13" />
 
     <Button
@@ -21,7 +23,9 @@
         android:layout_height="wrap_content"
         android:text="@string/string_select_btn2"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_colorFilter" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
@@ -34,15 +38,27 @@
         android:id="@+id/imageView2"
         android:layout_width="48dp"
         android:layout_height="51dp"
+        android:layout_marginStart="16dp"
         android:contentDescription="@string/description_arrow"
         app:layout_constraintBottom_toTopOf="@+id/btn_transferAction"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
         app:srcCompat="@drawable/outline_south_24" />
 
     <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="48dp"
+        android:layout_height="51dp"
+        android:contentDescription="@string/description_arrow"
+        app:layout_constraintBottom_toTopOf="@+id/btn_transferAction"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:srcCompat="@drawable/outline_south_24" />
+
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="48dp"
         android:layout_height="51dp"
+        android:layout_marginEnd="24dp"
         android:contentDescription="@string/description_arrow"
         app:layout_constraintBottom_toTopOf="@+id/btn_PhotoAction"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
@@ -53,14 +69,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="35dp" />
+        app:layout_constraintGuide_begin="20dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="35dp" />
+        app:layout_constraintGuide_end="20dp" />
 
     <ImageView
         android:id="@+id/Iv_osNotice"
@@ -79,7 +95,20 @@
         android:fontFamily="serif"
         android:text="@string/string_explain_transfer1"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/guideline13" />
+        app:layout_constraintEnd_toStartOf="@+id/tv_transfer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_transfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="@string/string_explain_filter1"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/Tv_photo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Tv_transfer" />
 
     <TextView
         android:id="@+id/Tv_photo"
@@ -88,7 +117,10 @@
         android:fontFamily="serif"
         android:text="@string/string_explain_photo1"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_transfer" />
 
     <TextView
         android:id="@+id/TV_welcome"
@@ -136,7 +168,20 @@
         android:fontFamily="serif"
         android:text="@string/string_explain_transfer2"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline13" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="@string/string_explain_filter2"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView2"
@@ -145,5 +190,17 @@
         android:fontFamily="serif"
         android:text="@string/string_explain_photo2"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline14" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/btn_colorFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_select_btn3"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintEnd_toStartOf="@+id/btn_PhotoAction"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_transferAction" />
 </androidx.constraintlayout.widget.ConstraintLayout>

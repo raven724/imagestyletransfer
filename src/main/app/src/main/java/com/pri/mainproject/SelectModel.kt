@@ -76,7 +76,7 @@ class SelectModel : AppCompatActivity() {
         btnClosePage.setOnClickListener {
             when(returnString){
                 "None" -> {
-                    Toast.makeText(this, "NoNoNo!!!!!!!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error. Please Select model.", Toast.LENGTH_SHORT).show()
                 }
                 "default" -> {
                     Toast.makeText(this, "Select photo to use as model", Toast.LENGTH_SHORT).show()

@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_new_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MainProject">
-        <activity android:name=".Notification"/>
+        <activity android:name=".SelectFilter"></activity>
+        <activity android:name=".BuildFilter" />
+        <activity android:name=".ApplyFilter" />
+        <activity android:name=".Notification" />
         <activity android:name=".ModelImage" />
         <activity android:name=".Transfer2" />
         <activity android:name=".SelectModel" />
@@ -31,4 +34,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

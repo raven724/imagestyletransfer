@@ -2,7 +2,8 @@
     <string name="app_name">Phonetist</string>
 
     <string name="string_select_btn1">Transfer</string>
-    <string name="string_select_btn2">Take Photo</string>
+    <string name="string_select_btn2">Photo</string>
+    <string name="string_select_btn3">Filter</string>
     <string name="string_go_main">Main Page</string>
     <string name="string_model">Select Model</string>
     <string name="string_transfer">Transfer</string>
@@ -16,9 +17,17 @@
     <string name="string_save_photo">Save Photo</string>
     <string name="string_model_name">Model Name</string>
     <string name="string_back">Back</string>
-    <string name="string_transfer_photo">Transfer Photo</string>
+    <string name="string_transfer_photo">Transfer</string>
     <string name="string_icon_arrow">▶</string>
     <string name="string_text_selectedModel">Selected Model</string>
+    <string name="string_select_filter">Select Filter</string>
+    <string name="string_build_filter">Build Filter</string>
+    <string name="string_apply_filter">Apply Filter</string>
+    <string name="string_fixed_zero">0</string>
+    <string name="string_fixed_one">1</string>
+    <string name="string_apply">Apply</string>
+    <string name="string_reset">Reset</string>
+    <string name="string_select">Select filter you want.</string>
 
     <string name="description_imageInput">Show Image Input</string>
     <string name="description_imageOutput">Show Image Output</string>
@@ -43,4 +52,19 @@
     <string name="string_explain_viewModel1">View</string>
     <string name="string_explain_viewModel2">what Model is prepared!</string>
     <string name="string_explain_os_usage">Use tflite model of magenta</string>
+    <string name="string_explain_filter1">Click to</string>
+    <string name="string_explain_filter2">use color filter!</string>
+
+    <string name="string_filter_grayscale">GrayScale</string>
+    <string name="string_filter_invert">Invert</string>
+    <string name="string_filter_redOnly">Red Only</string>
+    <string name="string_filter_greenOnly">Green Only</string>
+    <string name="string_filter_blueOnly">Blue Only</string>
+    <string name="string_filter_swap_RB">Swap Red and Blue</string>
+    <string name="string_filter_swap_GB">Swap Green and Blue</string>
+    <string name="string_filter_swap_RG">Swap Red and Green</string>
+    <string name="string_filter_sepia">Sepia</string>
+    <string name="string_filter_warm">Warm Color</string>
+    <string name="string_filter_cool">Cool Color</string>
+    <string name="string_filter_reset">Select Filter</string>
 </resources>

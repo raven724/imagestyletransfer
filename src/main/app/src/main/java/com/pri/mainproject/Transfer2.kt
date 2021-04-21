@@ -58,17 +58,17 @@ class Transfer2 : AppCompatActivity() {
                 fos.close()
             }
             else{
-                Toast.makeText(this, "히히 못가: descriptor", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error detected: descriptor", Toast.LENGTH_SHORT).show()
             }
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
                 values.clear()
                 values.put(MediaStore.Images.Media.IS_PENDING, 0)
                 contentResolver.update(uri, values, null, null)
             }
-            Toast.makeText(this, "히히 됐다", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Finish saved file", Toast.LENGTH_SHORT).show()
         }
         if(uri == null){
-            Toast.makeText(this, "히히 못가: uri", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Error detected: uri", Toast.LENGTH_SHORT).show()
         }
     }
 

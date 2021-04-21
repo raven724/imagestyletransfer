@@ -31,6 +31,7 @@ class SelectPage : AppCompatActivity() {
         val btnTransfer: Button = findViewById(R.id.btn_transferAction)
         val btnPhoto: Button = findViewById(R.id.btn_PhotoAction)
         val btnNotice: ImageView = findViewById(R.id.Iv_osNotice)
+        val btnFilter: Button = findViewById(R.id.btn_colorFilter)
 
         btnTransfer.setOnClickListener {
             val transferIntent = Intent(this, Transfer1::class.java)
@@ -42,6 +43,10 @@ class SelectPage : AppCompatActivity() {
         btnNotice.setOnClickListener {
             val notificationIntent = Intent(this, Notification::class.java)
             startActivity(notificationIntent)
+        }
+        btnFilter.setOnClickListener {
+            val filterIntent = Intent(this, ApplyFilter::class.java)
+            startActivity(filterIntent)
         }
     }
 
